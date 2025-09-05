@@ -28,7 +28,16 @@ plt.show()
 
 # Apply USM to get the resulting image using `sharpened = original + (original − unsharp) × amount`
 # Note: Again, take care of underflows/overflows if necessary.
-sharpened = img.astype(np.float32) + diff * 1.5
+sharpened = img.astype(np.float32) + diff * 10.5
 sharpened = np.clip(sharpened, 0, 255).astype(np.uint8)  # Clip values to valid range and convert back to uint8
 plt.imshow(sharpened)
 plt.show()
+
+'''
+- What is a good (reasonable) value for the amount parameter?
+   цей параметр регулює "потужність" збільшення різкості. 
+What happens if it is too small?
+    Поліпшення різкості буде замале і майже непомітне.
+What happens if it is too large
+    Різкість буде завиликою, може викликати артефакти і шум.
+'''
