@@ -94,7 +94,7 @@ for line in filtered_lines:
     
     cv2.line(result_fl, pt1, pt2, (255, 255, 0), 1, cv2.LINE_AA)
 
-plt.subplot(121), plt.imshow(edges, cmap='gray'), plt.title('Edge map')
+plt.subplot(121), plt.imshow(cropped_edges, cmap='gray'), plt.title('Edge map')
 plt.subplot(122), plt.imshow(result_fl, cmap='gray'), plt.title('Theta-filtered lines')
 plt.show()
 
@@ -121,13 +121,16 @@ for line in kmeans.cluster_centers_:
     pt1 = (int(x0 + 1000*(-b)), int(y0 + 1000*(a)))
     pt2 = (int(x0 - 1000*(-b)), int(y0 - 1000*(a)))
     
+    
     cv2.line(result_cl, pt1, pt2, (0, 255, 0), 1, cv2.LINE_AA)
+    
+    
     
 plt.subplot(121), plt.imshow(cropped_edges, cmap='gray'), plt.title('Edge map')
 plt.subplot(122), plt.imshow(result_cl, cmap='gray'), plt.title('Cluster-filtered lines')
 plt.show()
 
-
+# Let's summarize all steps in one pipe-line plot
 plt.rcParams['figure.figsize'] = [18, 8]
 plt.subplot(241), plt.imshow(img), plt.title('Original')
 plt.subplot(242), plt.imshow(gray, cmap='gray'), plt.title('Grayscaled')
@@ -143,7 +146,10 @@ out_path = "Lesson4/result/pipline.png"
 os.makedirs(os.path.dirname(out_path), exist_ok=True)
 plt.tight_layout()
 plt.savefig(out_path, dpi=200, bbox_inches="tight")
+
 plt.show()
+
+
 
 '''
 Do you see anything strange in the final result?
