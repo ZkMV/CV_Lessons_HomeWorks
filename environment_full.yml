@@ -1,0 +1,14 @@
+name: cvcourse
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12.11
+  - numpy=2.3.3
+  - matplotlib=3.10.6
+  - opencv=4.12.0
+  - jupyterlab=4.4.9
+  - ipykernel=6.30.1
+  - pip=25.2
+  - pip:
+      - dlib-bin==19.24.6
