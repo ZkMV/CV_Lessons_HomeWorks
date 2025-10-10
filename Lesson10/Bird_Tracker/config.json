@@ -1,0 +1,51 @@
+{
+  "source_video": "source/hawk5.mp4",
+  "start_frame": 5,
+  "io": {
+    "codec": "mp4v",
+    "fps": 0
+  },
+  "debug": {
+    "process_fraction": 1
+  },
+  "motion": {
+    "thermo_mode": "simple_turbo",
+    "gmc_model": "affine",
+    "feature": "ORB",
+    "max_features": 1000,
+    "fast_threshold": 10,
+    "gmc_min_inliers": 20,
+    "crop_pixels": 15,
+    "ransac_reproj_thresh": 3.0,
+    "ransac_max_iters": 2000,
+    "ransac_confidence": 0.99,
+    "pre_smooth": {
+      "type": "bilateral",
+      "ksize": 5,
+      "sigmaX": 1.0,
+      "bilateral_sigma_color": 30,
+      "bilateral_sigma_space": 10
+    },
+    "farneback": {
+      "pyr_scale": 0.5,
+      "levels": 3,
+      "winsize": 15,
+      "iterations": 3,
+      "poly_n": 5,
+      "poly_sigma": 1.2
+    }
+  },
+  "classification": {
+    "metric": "kurtosis_and_contours",
+    "active_threshold": 35,
+    "morph_open_ksize": 3,
+    "params": {
+      "min_kurtosis": 3.0,
+      "max_contours": 30,
+      "min_area": 50
+    }
+  },
+  "tracking": {
+    "tracker": "CSRT"
+  }
+}

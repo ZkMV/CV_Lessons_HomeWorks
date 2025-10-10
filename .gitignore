@@ -1,3 +1,11 @@
-venv/
-.venv/
+/venv/
+.env/
 camera/
+Lesson10/Bird_Tracker/data/
+Lesson10/result/*.mp4
+Lesson10/result/*.npz
+yolov5s.pt
+__pycache__/
+*.gif
+*.mp4
+*.npy
