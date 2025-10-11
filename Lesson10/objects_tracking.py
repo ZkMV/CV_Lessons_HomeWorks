@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 import matplotlib.animation as animation
 import imageio
 import os
-from screeninfo import get_monitors
+#from screeninfo import get_monitors
 
 # Центральна константа для збереження результатів
 OUTPUT_FOLDER = os.path.join('Lesson10', 'result')
